@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { finalize } from 'rxjs/operators';
 import { LoginService } from 'src/app/auth/services/login.service';
 import { SpinnerService } from '../../../shared/services/spinner.service';
-import User from '../../models/user.model';
+import { User } from '../../models/user';
 
 
 @Component({

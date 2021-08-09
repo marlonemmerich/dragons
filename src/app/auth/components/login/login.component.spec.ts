@@ -5,9 +5,9 @@ import { FormsModule, FormBuilder, ReactiveFormsModule, FormGroup, Validators } 
 import { HttpClientModule } from '@angular/common/http';
 
 import { LoginComponent } from './login.component';
-import User from './models/user.model';
+import { User } from '../../models/user';
 import { Router } from '@angular/router';
-import { LoginService } from 'src/app/login/services/login.service';
+import { LoginService } from 'src/app/auth/services/login.service';
 import { SpinnerService } from 'src/app/shared/services/spinner.service';
 import { noop, Observable, of, throwError } from 'rxjs';
 
