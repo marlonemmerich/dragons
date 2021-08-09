@@ -49,6 +49,7 @@ h3 {
 	border-radius: 5px;
 	color: $white;
 	padding: 15px 32px;
+	margin: 5px 0;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -83,6 +84,20 @@ h3 {
 
 		&__generic {
 			padding: 20px;
+		}
+		h1 {
+			padding: 15px 0;
+		}
+		ul {
+			padding: 5px;
+
+			li {
+				padding-top: 10px;
+			}
+
+			b {
+				font-weight: bold;
+			}
 		}
 	}
 
@@ -133,6 +148,6 @@ table {
 	cursor: pointer;
 }
 
-.margin-left-10 {
-	margin-left: 10px;
+.margin-right-10 {
+	margin-right: 10px;
 }

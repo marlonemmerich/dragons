@@ -20,7 +20,8 @@ export class ListDragonsComponent implements OnInit {
   constructor(
     private dragonService: DragonService,
     private spinnerService: SpinnerService,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
     ) { }
 
   ngOnInit(): void {
@@ -82,5 +83,9 @@ export class ListDragonsComponent implements OnInit {
     this.router.navigate(['/dragons/create']);
   }
 
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/login']);
+  }
 
 }
