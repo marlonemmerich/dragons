@@ -9,14 +9,14 @@ import { Dragon } from '../../models/dragon';
 })
 export class DragonDetailsComponent implements OnInit {
 
-  dragon: Dragon = new Dragon({});
+  dragon: Dragon = new Dragon();
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(
+    this.activatedRoute.data.subscribe(
       (data) => {
         this.dragon = new Dragon(data.dragon);
       }

@@ -20,6 +20,6 @@ export class DragonDetailsResolver implements Resolve<boolean> {
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.dragonService.getDragon(route.params['id'])
-    .pipe(catchError((err) => this.router.navigateByUrl('/dragons')));
+      .pipe(catchError((err) => this.router.navigateByUrl('/dragons') ))
   }
 }

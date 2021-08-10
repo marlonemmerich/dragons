@@ -19,7 +19,7 @@ export class EditDragonComponent implements OnInit {
   editDragonErrorMessage: string = '';
 
   constructor(
-    private route: ActivatedRoute,
+    private activatedRoute: ActivatedRoute,
     private router: Router,
     private formBuilder: FormBuilder,
     private spinnerService: SpinnerService,
@@ -27,10 +27,10 @@ export class EditDragonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.data.subscribe(
+    this.activatedRoute.data.subscribe(
       (data) => {
         this.originalDragon = new Dragon(data.dragon);
-        this.createEditDragonForm(data.dragon);
+        this.createEditDragonForm(new Dragon(data.dragon));
       }
     );
   }
@@ -43,8 +43,8 @@ export class EditDragonComponent implements OnInit {
   }
 
   submitEditDragon() {
-
     this.isSubmitted = true;
+    this.editDragonErrorMessage = '';
 
     if (this.editDragonForm.invalid) {
       return;
@@ -62,7 +62,6 @@ export class EditDragonComponent implements OnInit {
           this.router.navigateByUrl('/dragons');
         },
         error: error => {
-          console.log('error', error)
           this.editDragonErrorMessage = (error && error.message)? error.message : 'Ocorreu um erro ao tentar editar o dragão';
         },
       });

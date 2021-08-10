@@ -13,7 +13,7 @@ export class ApiService {
   ) {}
 
   private parseErrors(error: any) {
-    return  throwError(error.message);
+    return throwError(error.message);
   }
 
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {

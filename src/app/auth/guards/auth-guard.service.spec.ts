@@ -1,10 +1,8 @@
 import { TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { Router } from '@angular/router';
-
 import { AuthGuard } from '../guards/auth-guard.service';
 import { LoginService } from '../services/login.service';
-import { noop } from 'rxjs';
 
 describe('AuthGuard', () => {
   let service: AuthGuard;

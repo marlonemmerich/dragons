@@ -25,20 +25,20 @@ export class CreateDragonComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.createNewDragonForm(new Dragon({}));
+    this.createNewDragonForm(new Dragon());
   }
 
   createNewDragonForm(dragon: Dragon) {
     this.createDragonForm = this.formBuilder.group({
       name: [dragon.name, Validators.required],
-      type: [dragon.name, Validators.required],
+      type: [dragon.type, Validators.required],
       createdAt: [dragon.createdAt],
     });
   }
 
   submitCreateDragon() {
-
     this.isSubmitted = true;
+    this.createDragonErrorMessage = '';
 
     if (this.createDragonForm.invalid) {
       return;
@@ -59,7 +59,6 @@ export class CreateDragonComponent implements OnInit {
           this.router.navigateByUrl('/dragons');
         },
         error: error => {
-          console.log('error', error)
           this.createDragonErrorMessage = (error && error.message)? error.message : 'Ocorreu um erro ao tentar cadastrar o dragão';
         },
       });

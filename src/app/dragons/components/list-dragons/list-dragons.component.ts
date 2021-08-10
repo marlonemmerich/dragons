@@ -65,13 +65,12 @@ export class ListDragonsComponent implements OnInit {
         this.removeDragonFromArray(dragonId);
       },
       error: error => {
-        this.listErrorMessage = (error && error.message) ? error.message : 'Houve um problema ao obter os dragões.';
+        this.listErrorMessage = (error && error.message) ? error.message : 'Houve um problema ao tentar remover o dragão.';
       },
     });
   }
 
   redirectShowDetailsDragon(dragonId: string) {
-    console.log('e??', dragonId);
     this.router.navigate(['/dragons/detail', dragonId]);
   }
 

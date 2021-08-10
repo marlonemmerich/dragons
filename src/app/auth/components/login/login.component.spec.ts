@@ -1,15 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-
 import { FormsModule, FormBuilder, ReactiveFormsModule, FormGroup, Validators } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { LoginComponent } from './login.component';
 import { User } from '../../models/user';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/auth/services/login.service';
 import { SpinnerService } from 'src/app/shared/services/spinner.service';
-import { noop, Observable, of, throwError } from 'rxjs';
+import { noop, of, throwError } from 'rxjs';
 
 
 
@@ -67,7 +65,6 @@ describe('LoginComponent', () => {
   });
 
   it('createFormLogin - need to create correctly', () => {
-    spyOn(component, 'createFormLogin').and.callThrough();
     expect(component).toBeTruthy();
 
     let mockUser = new User();
