@@ -1,0 +1,38 @@
+<div class="card">
+    <div class="card__content">
+        <div class="card__content__generic">
+            <button (click)="redirectCreateDragon()" class="button cursor-pointer margin-right-10">Adicionar dragão</button>
+            <button (click)="logout()" class="button warning cursor-pointer">Deslogar</button>
+        </div>
+
+        <table class="card__table">
+            <thead>
+                <tr>
+                    <th>Data de criação</th>
+                    <th>Nome</th>
+                    <th>Tipo</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="!dragonsList.length">
+                <tr class="centered">
+                    <td colspan="4" class="centered">
+                        Nenhum dragão cadastrado.
+                    </td>
+                </tr>
+            </tbody>
+            <tbody *ngIf="dragonsList.length">
+                <tr *ngFor="let dragon of dragonsList | arraySort: 'name'">
+                    <td (click)="redirectShowDetailsDragon(dragon.id)" class="cursor-pointer">{{dragon.createdAt | date : 'dd/MM/yyyy HH:mm:ss'}}</td>
+                    <td (click)="redirectShowDetailsDragon(dragon.id)" class="cursor-pointer">{{dragon.name}}</td>
+                    <td (click)="redirectShowDetailsDragon(dragon.id)" class="cursor-pointer">{{dragon.type}}</td>
+                    <td>
+                        <a class="cursor-pointer" (click)="deleteDragon(dragon.id)">Remover</a>&nbsp;
+                        <a class="cursor-pointer" (click)="redirectEditDragon(dragon.id)">Editar</a>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
